@@ -73,6 +73,70 @@
         <h2 v-if="score>=60" style="color:green">welcome to our school</h2>
         <h2 v-else style="color: red">im sorry you dont pass</h2>
 
+        <h2>测试遍历数组</h2>
+        <ul>
+            <li v-for="(p, index) in persons">
+                {{index}}--{{p.name}}--{{p.age}}
+            </li>
+        </ul>
+        <!--增删改查-->
+
+        <ul>
+            <li v-for="(p, index) in persons" :key="p.id" style="margin-top: 5px">
+                {{p.name}}--{{p.age}}
+                --<button @click="deleteItem(index)">delete</button>
+                --<button @click="updateItem(index, {
+                id:Date.now(),name:'lan',age:12
+                })">update</button>
+            </li>
+        </ul>
+        <button @click="addFirst({
+        id:Date.now(),name:'red',age:11
+        })">add first</button>
+        <button @click="addLast({
+            id:Date.now(),'name':'ming',age:12
+        })">add last</button>
+        <h2>增删改查</h2>
+        <!--过滤-->
+        <input type="text" placeholder="姓名" v-model="keyword"/>
+        <h2>人员列表</h2>
+        <ul>
+            <li v-for="(p, index) of filterPersons" :key="index">
+                {{p.name}}--{{p.age}}
+            </li>
+        </ul>
+
+        <!--表单-->
+        <form @submit.prevent="confirm2">
+            账号：<input type="text" v-model="userInfo.account">
+            <br><br>
+            密码：<input type="password" v-model="userInfo.password">
+            <br><br>
+            年龄：<input type="number" v-model="userInfo.age">
+            <br><br>
+            性别：
+            男：<input type="radio" name="sex" v-model="userInfo.sex" value="male">
+            女：<input type="radio" name="sexx" v-model="userInfo.sex" value="female">
+            爱好：
+            学习：<input type="checkbox" v-model="userInfo.hobby" value="study">
+            打游戏: <input type="checkbox" v-model="userInfo.bobby" value="game">
+            旅行：<input type="checkbox" v-model="userInfo.hobby" value="eat">
+            <br><br>
+            所属校区:
+            <select v-model="userInfo.city">
+                <option value="">请选择校区</option>
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="guangzhou">广州</option>
+            </select>
+            <br><br>
+            其他信息
+            <textarea v-model="userInfo.other"></textarea>
+            <br><br>
+            <input type="checkbox" v-model="userInfo.agree">阅读并接受
+            <button>提交</button>
+        </form>
+        <div>预览：{{userInfo}}</div>
     </div>
   </body>
 
@@ -98,10 +162,29 @@
                       atguigu1: true,
                       atguigu2: false,
                   },
-                  classArr : ['atguigu1','atguigu2','atguigu3']
+                  classArr : ['atguigu1','atguigu2','atguigu3'],
+                  persons : [
+                      {id:'001',name:'zhangsan',age:22},
+                      {id:'002',name:'lisi',age:24},
+                      {id:'003',name:'wangwu',age:23}
+                  ],
+                  keyword:"",
+                  userInfo : {
+                      account:"",
+                      password:"",
+                      age:18,
+                      sex:'female',
+                      hobby:['study'],
+                      city:'beijing',
+                      other:"",
+                      agree:false
+                  }
               }
           },
           methods: {
+              confirm2() {
+                    alert(`提交请求，用户信息 : ` + JSON.stringify(this.userInfo))
+              },
               confirm() {
                   if (window.confirm("Are you sure?")) {
                       window.location.href = 'http://www.baidu.com'
@@ -130,6 +213,18 @@
               },
               examAgin() {
                   this.score += 55
+              },
+              addFirst(newP) {
+                  this.persons.unshift(newP)
+              },
+              addLast(newP){
+                  this.persons.push(newP)
+              },
+              deleteItem(index) {
+                this.persons.splice(index,1)
+              },
+              updateItem(index,newP) {
+                  this.persons.splice(index,1,newP)
               }
           },
           //计算属性
@@ -151,6 +246,11 @@
                       this.firstName = name[0]
                       this.lastName = name[1]
                   }
+              },
+              filterPersons() {
+                  return this.persons.filter((p) => {
+                      return p.name.indexOf(this.keyword) !== -1
+                  })
               }
           },
           watch: {
