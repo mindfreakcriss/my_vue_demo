@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+      <style>
+          .basic {
+              width: 200px;
+              height: 100px;
+              line-height: 100px;
+              text-align: center;
+              border: 1px solid black;
+              margin-bottom: 10px;
+          }
+
+          .normal {
+              background-color: skyblue;
+          }
+          .happy {
+              background-color: rgba(255, 255, 255, 0.6444);
+          }
+          .sad {
+              background-color:gray;
+          }
+          .atguigu1 {
+              background-color: yellowgreen;
+          }
+          .atguigu2 {
+              font-size: 30px;
+          }
+          .atguigu3 {
+              border-radius: 20px;
+          }
+      </style>
+  </head>
+  <body>
+    <div id="app">
+        <a v-bind:href="url">go to study</a>
+        <br>
+        <button v-on:click="confirm">sure</button>
+
+        <h2>测评得分：{{score}}</h2>
+        <h3>测评结果：{{resultText}}</h3>
+        <button @click="reExam">学习之后的测评</button>
+
+        <p>
+            first name: <input type="text" v-model="firstName">
+        </p>
+        <p>
+            last name: <input type="text" v-model="lastName">
+        </p>
+        <p>
+            family name: <input type="text" placeholder="format : first-name - last-name" v-model="familyName">
+        </p>
+
+        title: <input type="text" placeholder="输入内容同步到标题" v-model="title">
+        <br>
+        question: <span>{{question}}</span>
+
+        <h3>name: {{person.name}}</h3>
+        <h3>likes : {{person.likes}}</h3>
+        <button @click="updateP">update person information</button>
+
+        <h2>test class bind</h2>
+        <div class="basic" :class="classStr" @click="updateClass1">change_one</div>
+        <div class="basic" :class="classObj" @click="updateClass2">change_two</div>
+        <div class="basic" :class="classArr" @click="updateClass3">change_three</div>
+
+        <h1>你的入学得分：{{score}}</h1>
+        <button @click="examAgin" v-if="score<60">study once again</button>
+        <h2 v-if="score>=60" style="color:green">welcome to our school</h2>
+        <h2 v-else style="color: red">im sorry you dont pass</h2>
+
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+      const {createApp} = Vue
+
+      createApp({
+          data() {
+              return {
+                  url:"http://www.baidu.com",
+                  score:5,
+                  firstName:"A",
+                  lastName:"B",
+                  title:"",
+                  question:"",
+                  person : {
+                      name:"vue-js",
+                      likes:['football','basketball']
+                  },
+                  classStr : "normal",
+                  classObj : {
+                      atguigu1: true,
+                      atguigu2: false,
+                  },
+                  classArr : ['atguigu1','atguigu2','atguigu3']
+              }
+          },
+          methods: {
+              confirm() {
+                  if (window.confirm("Are you sure?")) {
+                      window.location.href = 'http://www.baidu.com'
+                  }
+              },
+              reExam() {
+                  this.score += 60
+              },
+              updateP() {
+                  this.person = {
+                      name : this.person.name + '----',
+                      likes : [...this.person.likes,'sing']
+                  }
+              },
+              updateClass1() {
+                  const arr = ['happy','sad','normal']
+                  const index = Math.floor(Math.random() * 3);
+                  this.classStr = arr[index];
+              },
+              updateClass2() {
+                  this.classObj.atguigu1 = !this.classObj.atguigu1;
+                  this.classObj.atguigu2 = !this.classObj.atguigu2;
+              },
+              updateClass3() {
+                  this.classArr.pop()
+              },
+              examAgin() {
+                  this.score += 55
+              }
+          },
+          //计算属性
+          computed: {
+              resultText() {
+                  console.log('computed resultText')
+                  const result = this.score > 60 ? 'passed' : 'failed'
+                  return result
+              },
+              //修改family name的时候会一并修改A+B的内容
+              familyName : {
+                  get() {
+                      console.log('familyName get()')
+                      return this.firstName + '-' + this.lastName
+                  },
+                  set(value) {
+                      console.log('familyName set', value)
+                      const name = value.split('-')
+                      this.firstName = name[0]
+                      this.lastName = name[1]
+                  }
+              }
+          },
+          watch: {
+                title (newValue,oldValue) {
+                    console.log(oldValue)
+                    console.log(newValue)
+                    document.title = newValue
+                    setTimeout( () => {
+                        const question =   `${newValue}最匹配的问题？`
+                        this.question = question
+                    }, 1000)
+                },
+              person : {
+                    handler (newValue, oldValue) {
+                        setTimeout(() => {
+                            alert("向后台提交信息" + JSON.stringify(newValue))
+                        }, 1000)
+                    },
+                  immediate: true, //标识立即实行，初始化会执行第一次
+                  deep: true, //深度监听
+              }
+          }
+      }).mount('#app')
+  </script>
+</html>
