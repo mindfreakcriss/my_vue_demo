@@ -21,6 +21,7 @@
               :key="id"
               :to="`/users/${id}`"
               class="list-group-item list-group-item-action"
+              :class="{ active : id === currentId}"
             >用户{{id}}</router-link>
           </div>
         </div>
@@ -34,7 +35,18 @@
 </template>
 <script setup>
 
-import { ref } from 'vue';
+import {ref, watch} from 'vue';
+import {useRoute} from "vue-router";
 const ids = ref([1,2,3,4,5]);
+
+const router = useRoute();
+const currentId = ref(null);
+watch(
+    () => currentId,
+    (value) => {
+      currentId.value = +value;
+    },
+    { immediate: true }
+)
 
 </script>
