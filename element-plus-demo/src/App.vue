@@ -14,11 +14,11 @@ import {Delete, Location} from "@element-plus/icons-vue";
       <el-sub-menu index="1">
         <template #title>
           <el-icon><Location /></el-icon>
-          <span>Navigator One</span>
+          <span>一级菜单</span>
         </template>
-        <el-menu-item-group title="Group One">
-          <el-menu-item index="1-1">Item One</el-menu-item>
-          <el-menu-item index="1-2">Item Two</el-menu-item>
+        <el-menu-item-group>
+          <el-menu-item index="1-1">菜单元素1</el-menu-item>
+          <el-menu-item index="1-2">菜单元素2</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
     </el-menu></el-aside>
