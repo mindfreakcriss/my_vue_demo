@@ -11,6 +11,7 @@ import ArrayChangeDemo from "@/components/ArrayChangeDemo.vue";
 import ComputedDemo from "@/components/ComputedDemo.vue";
 import ClassDemo from "@/components/ClassDemo.vue";
 import WatchDemo from "@/components/WatchDemo.vue";
+import ModelDemo from "@/components/ModelDemo.vue";
 </script>
 
 <template>
@@ -25,5 +26,6 @@ import WatchDemo from "@/components/WatchDemo.vue";
 <!--  <ArrayChangeDemo></ArrayChangeDemo>-->
 <!--  <computed-demo></computed-demo>-->
 <!--  <classDemo></classDemo>-->
-  <watch-demo></watch-demo>
+<!--  <watch-demo></watch-demo>-->
+  <model-demo></model-demo>
 </template>
