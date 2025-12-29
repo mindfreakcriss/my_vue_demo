@@ -7,6 +7,7 @@ import EventInlineDemo from "@/components/EventInlineDemo.vue";
 import EventMethodDemo from "@/components/EventMethodDemo.vue";
 import EventParamDemo from "@/components/EventParamDemo.vue";
 import EventDefaultDemo from "@/components/EventDefaultDemo.vue";
+import ArrayChangeDemo from "@/components/ArrayChangeDemo.vue";
 </script>
 
 <template>
@@ -17,5 +18,6 @@ import EventDefaultDemo from "@/components/EventDefaultDemo.vue";
 <!--  <EventInlineDemo></EventInlineDemo>-->
 <!--  <EventMethodDemo></EventMethodDemo>-->
 <!--  <EventParamDemo></EventParamDemo>-->
-  <EventDefaultDemo></EventDefaultDemo>
+<!--  <EventDefaultDemo></EventDefaultDemo>-->
+  <ArrayChangeDemo></ArrayChangeDemo>
 </template>
