@@ -1,4 +1,4 @@
-<script>
+<script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import IfDemo from "@/components/IfDemo.vue";
 import ListDemo from "@/components/ListDemo.vue";
@@ -17,12 +17,26 @@ import RefDomDEMO from "@/components/RefDomDEMO.vue";
 import MyConponent from "@/components/MyConponent.vue";
 
 //2 - 注册组件
-export default {
-  components: {
-    MyConponent:MyConponent,
-  }
-}
+// export default {
+//   components: {
+//     MyConponent:MyConponent,
+//   }
+// }
 
+
+//layout
+import Header from "@/pages/Header.vue";
+import Main from "@/pages/Main.vue";
+import Aside from "@/pages/Aside.vue";
+
+
+// export default {
+//   components: {
+//     Header,
+//     Main,
+//     Aside,
+//   }
+// }
 
 </script>
 
@@ -42,6 +56,8 @@ export default {
 <!--  <model-demo></model-demo>-->
 <!--  <ref-dom-d-e-m-o></ref-dom-d-e-m-o>-->
   <!---3 - 使用-->
-  <MyConponent></MyConponent>
-
+<!--  <MyConponent></MyConponent>-->
+<Header></Header>
+  <Main></Main>
+  <Aside></Aside>
 </template>
