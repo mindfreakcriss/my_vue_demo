@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 import IfDemo from "@/components/IfDemo.vue";
 import ListDemo from "@/components/ListDemo.vue";
@@ -25,18 +25,17 @@ import MyConponent from "@/components/MyConponent.vue";
 
 
 //layout
-import Header from "@/pages/Header.vue";
+// import Header from "@/pages/Header.vue";
 import Main from "@/pages/Main.vue";
 import Aside from "@/pages/Aside.vue";
 
 
-// export default {
-//   components: {
-//     Header,
-//     Main,
-//     Aside,
-//   }
-// }
+export default {
+  components: {
+    Main,
+    Aside,
+  }
+}
 
 </script>
 
