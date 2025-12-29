@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
 import IfDemo from "@/components/IfDemo.vue";
 import ListDemo from "@/components/ListDemo.vue";
@@ -13,6 +13,17 @@ import ClassDemo from "@/components/ClassDemo.vue";
 import WatchDemo from "@/components/WatchDemo.vue";
 import ModelDemo from "@/components/ModelDemo.vue";
 import RefDomDEMO from "@/components/RefDomDEMO.vue";
+// 1 - 引入组件
+import MyConponent from "@/components/MyConponent.vue";
+
+//2 - 注册组件
+export default {
+  components: {
+    MyConponent:MyConponent,
+  }
+}
+
+
 </script>
 
 <template>
@@ -29,5 +40,8 @@ import RefDomDEMO from "@/components/RefDomDEMO.vue";
 <!--  <classDemo></classDemo>-->
 <!--  <watch-demo></watch-demo>-->
 <!--  <model-demo></model-demo>-->
-  <ref-dom-d-e-m-o></ref-dom-d-e-m-o>
+<!--  <ref-dom-d-e-m-o></ref-dom-d-e-m-o>-->
+  <!---3 - 使用-->
+  <MyConponent></MyConponent>
+
 </template>
