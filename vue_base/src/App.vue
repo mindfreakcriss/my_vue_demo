@@ -12,6 +12,7 @@ import ComputedDemo from "@/components/ComputedDemo.vue";
 import ClassDemo from "@/components/ClassDemo.vue";
 import WatchDemo from "@/components/WatchDemo.vue";
 import ModelDemo from "@/components/ModelDemo.vue";
+import RefDomDEMO from "@/components/RefDomDEMO.vue";
 </script>
 
 <template>
@@ -27,5 +28,6 @@ import ModelDemo from "@/components/ModelDemo.vue";
 <!--  <computed-demo></computed-demo>-->
 <!--  <classDemo></classDemo>-->
 <!--  <watch-demo></watch-demo>-->
-  <model-demo></model-demo>
+<!--  <model-demo></model-demo>-->
+  <ref-dom-d-e-m-o></ref-dom-d-e-m-o>
 </template>
