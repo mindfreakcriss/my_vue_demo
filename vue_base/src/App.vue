@@ -6,6 +6,7 @@ import KeyDemo from "@/components/KeyDemo.vue";
 import EventInlineDemo from "@/components/EventInlineDemo.vue";
 import EventMethodDemo from "@/components/EventMethodDemo.vue";
 import EventParamDemo from "@/components/EventParamDemo.vue";
+import EventDefaultDemo from "@/components/EventDefaultDemo.vue";
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import EventParamDemo from "@/components/EventParamDemo.vue";
 <!--  <KeyDemo></KeyDemo>-->
 <!--  <EventInlineDemo></EventInlineDemo>-->
 <!--  <EventMethodDemo></EventMethodDemo>-->
-  <EventParamDemo></EventParamDemo>
+<!--  <EventParamDemo></EventParamDemo>-->
+  <EventDefaultDemo></EventDefaultDemo>
 </template>
