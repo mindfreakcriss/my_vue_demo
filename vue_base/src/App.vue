@@ -26,14 +26,15 @@ import MyConponent from "@/components/MyConponent.vue";
 
 //layout
 // import Header from "@/pages/Header.vue";
-import Main from "@/pages/Main.vue";
-import Aside from "@/pages/Aside.vue";
-
+// import Main from "@/pages/Main.vue";
+// import Aside from "@/pages/Aside.vue";
+import Parent from "@/components/Parent.vue";
 
 export default {
   components: {
-    Main,
-    Aside,
+    // Main,
+    Parent
+    // Aside,
   }
 }
 
@@ -56,7 +57,8 @@ export default {
 <!--  <ref-dom-d-e-m-o></ref-dom-d-e-m-o>-->
   <!---3 - 使用-->
 <!--  <MyConponent></MyConponent>-->
-<Header></Header>
-  <Main></Main>
-  <Aside></Aside>
+<!--<Header></Header>-->
+<!--  <Main></Main>-->
+<!--  <Aside></Aside>-->
+  <parent></parent>
 </template>
