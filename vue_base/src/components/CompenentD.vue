@@ -5,9 +5,10 @@ export default {
 
     }
   },
-  props:[
-      'title','onEvent'
-  ]
+  props:{
+    'title':String,
+    'onEvent':Function //是一个函数名，即：通过函数方式进行子组件和父组件传值
+  }
 }
 </script>
 
