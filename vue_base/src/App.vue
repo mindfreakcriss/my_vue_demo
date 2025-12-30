@@ -34,16 +34,17 @@ import ComponentEvent from "@/components/ComponentEvent.vue";
 import componentEvent from "@/components/ComponentEvent.vue";
 import ShowSearch from "@/components/ShowSearch.vue";
 import ComponentC from "@/components/ComponentC.vue";
-
+import SlotBase from "@/components/SlotBase.vue";
 export default {
   components: {
     // Main,
     //Parent
     // Aside,
     //ComponentA
-    componentEvent,
-    ShowSearch,
-    ComponentC
+    // componentEvent,
+    // ShowSearch,
+    // ComponentC
+    SlotBase
   }
 }
 
@@ -73,5 +74,11 @@ export default {
 <!--  <ComponentA></ComponentA>-->
 <!--  <component-event></component-event>-->
 <!--  <ShowSearch></ShowSearch>-->
-  <ComponentC></ComponentC>
+<!--  <ComponentC></ComponentC>-->
+  <SlotBase>
+    <div>
+      <h3>slot title</h3>
+      <p>slot content</p>
+    </div>
+  </SlotBase>
 </template>
