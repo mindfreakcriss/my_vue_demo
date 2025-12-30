@@ -25,7 +25,8 @@
 // ref 用于基本响应式数据 String Number Boolean
 // reactive 用于创建引用类型的响应式数据 Object Array
 // computed 用于计算属性
-import { ref, reactive,computed } from 'vue'
+//watch 侦听
+import { ref, reactive,computed,watch } from 'vue'
 
 //基础属性
 const message = ref("组合式API绑定数据简约")
@@ -48,6 +49,11 @@ const count = ref(0)
 function addCount() {
   count.value += 1
 }
+
+//监听，参数1 监听的数据
+watch(count, (newValue, oldValue) => {
+  console.log(newValue, oldValue)
+})
 
 </script>
 
