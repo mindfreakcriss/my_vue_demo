@@ -29,12 +29,14 @@ import MyConponent from "@/components/MyConponent.vue";
 // import Main from "@/pages/Main.vue";
 // import Aside from "@/pages/Aside.vue";
 import Parent from "@/components/Parent.vue";
+import ComponentA from "@/components/ComponentA.vue";
 
 export default {
   components: {
     // Main,
-    Parent
+    //Parent
     // Aside,
+    ComponentA
   }
 }
 
@@ -60,5 +62,6 @@ export default {
 <!--<Header></Header>-->
 <!--  <Main></Main>-->
 <!--  <Aside></Aside>-->
-  <parent></parent>
+<!--  <parent></parent>-->
+  <ComponentA></ComponentA>
 </template>
