@@ -30,13 +30,16 @@ import MyConponent from "@/components/MyConponent.vue";
 // import Aside from "@/pages/Aside.vue";
 import Parent from "@/components/Parent.vue";
 import ComponentA from "@/components/ComponentA.vue";
+import ComponentEvent from "@/components/ComponentEvent.vue";
+import componentEvent from "@/components/ComponentEvent.vue";
 
 export default {
   components: {
     // Main,
     //Parent
     // Aside,
-    ComponentA
+    //ComponentA
+    componentEvent,
   }
 }
 
@@ -63,5 +66,6 @@ export default {
 <!--  <Main></Main>-->
 <!--  <Aside></Aside>-->
 <!--  <parent></parent>-->
-  <ComponentA></ComponentA>
+<!--  <ComponentA></ComponentA>-->
+  <component-event></component-event>
 </template>
