@@ -19,7 +19,7 @@
     @func=function 这段代码在父级存在
     function 为实际实现的函数名，data可以在function里面使用
      */
-    
+
 </script>
 
 <template>
