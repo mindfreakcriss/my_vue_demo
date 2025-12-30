@@ -2,11 +2,13 @@
     <h3>生命周期函数</h3>
     <p> {{message}}</p>
   <button @click="updateData">更新数据</button>
+  <br>
 
+  <UserComponent/>
 </template>
 
 <script>
-
+import UserComponent from "@/components/UserComponents.vue";
 /**
  * 生命周期函数,自动执行，属于钩子函数。可以在特定的时期做自己想做的事情
  * 创建期： beforeCreate created
@@ -24,6 +26,9 @@ export default {
     return {
       message: "hello world",
     }
+  },
+  components: {
+    UserComponent
   },
   methods: {
     updateData() {
