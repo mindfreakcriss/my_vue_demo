@@ -24,11 +24,23 @@
 <script setup>
 // ref 用于基本响应式数据 String Number Boolean
 // reactive 用于创建引用类型的响应式数据 Object Array
-import { ref, reactive } from 'vue'
+// computed 用于计算属性
+import { ref, reactive,computed } from 'vue'
 
+//基础属性
 const message = ref("组合式API绑定数据简约")
 const userInfo = reactive({
   name:"iwen"
+})
+
+//计算属性
+const reverse = computed( () => {
+  //注意：message 在逻辑里面读取(script)，需要加 .value 才行
+  return message.value.split("").reverse().join("")
+})
+
+const demo = computed(() => {
+  return message.value + "hahah";
 })
 
 </script>
@@ -37,6 +49,8 @@ const userInfo = reactive({
     <h3>组合式API</h3>
     <p>{{ message }}</p>
     <p>{{ userInfo.name}}</p>
+    <p>{{ reverse }}</p>
+    <p>{{ demo }}</p>
 </template>
 
 <style scoped>
