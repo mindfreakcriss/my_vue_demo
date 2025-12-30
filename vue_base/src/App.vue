@@ -35,6 +35,7 @@ import componentEvent from "@/components/ComponentEvent.vue";
 import ShowSearch from "@/components/ShowSearch.vue";
 import ComponentC from "@/components/ComponentC.vue";
 import SlotBase from "@/components/SlotBase.vue";
+import SlotsTwo from "@/components/SlotsTwo.vue";
 export default {
   components: {
     // Main,
@@ -44,7 +45,14 @@ export default {
     // componentEvent,
     // ShowSearch,
     // ComponentC
-    SlotBase
+   // SlotBase
+    SlotsTwo
+  },
+  data(){
+    return {
+      //插槽内容可以访问到父组件作用域，因为插槽内容本身就是父组件模版中定义的
+      message:"slot parent sth"
+    }
   }
 }
 
@@ -75,10 +83,22 @@ export default {
 <!--  <component-event></component-event>-->
 <!--  <ShowSearch></ShowSearch>-->
 <!--  <ComponentC></ComponentC>-->
-  <SlotBase>
-    <div>
-      <h3>slot title</h3>
-      <p>slot content</p>
-    </div>
-  </SlotBase>
+<!--  <SlotBase>-->
+<!--    <div>-->
+<!--      <h3>slot title</h3>-->
+<!--      <p>slot content</p>-->
+<!--    </div>-->
+<!--  </SlotBase>-->
+  <SlotsTwo>
+<!--    <h3>{{message}}</h3>--> <!--默认内容是指，slot中间没有东西-->
+    <template v-slot:header>
+        <h3>标题</h3>
+    </template>
+    <template v-slot:main>
+        <p>内容</p>
+    </template>
+    <template #body>
+      <p>插槽简写</p>
+    </template>
+  </SlotsTwo>
 </template>
