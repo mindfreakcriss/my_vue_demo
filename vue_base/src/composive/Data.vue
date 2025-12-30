@@ -28,6 +28,13 @@
 //watch 侦听
 // onMounted 生命周期函数
 import { ref, reactive,computed,watch, onMounted, } from 'vue'
+//声明一个ref 来存放该元素的引用，需要和模版的ref 同名
+const msg = ref(null)
+//操作dom，不能放在最外层，在DOM还没有渲染的时候，这里的代码就已经执行
+//需要保证dom渲染完成之后去读取
+onMounted(() => {
+  msg.value.innerHTML = "修改过的数据"
+})
 
 //基础属性
 const message = ref("组合式API绑定数据简约")
@@ -65,10 +72,11 @@ onMounted(() => {
    console.log("组件渲染之后2")
 });
 
-</script>
+</script>`
 
 <template>
     <h3>组合式API</h3>
+    <p ref="msg">组合式API-模版引用</p>
     <p>{{ message }}</p>
     <p>{{ userInfo.name}}</p>
     <p>{{ reverse }}</p>
