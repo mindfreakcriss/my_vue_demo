@@ -2,10 +2,10 @@
 import { createApp } from 'vue'
 
 //根组件
-import AppLife from './App.vue'
+import AppComposive from './App-composive.vue'
 import Header from '@/pages/Header.vue'
 
-const app = createApp(AppLife);
+const app = createApp(AppComposive);
 
 //在这里注册组件,推荐局部组册
 app.component('Header', Header);
