@@ -26,7 +26,8 @@
 // reactive 用于创建引用类型的响应式数据 Object Array
 // computed 用于计算属性
 //watch 侦听
-import { ref, reactive,computed,watch } from 'vue'
+// onMounted 生命周期函数
+import { ref, reactive,computed,watch, onMounted, } from 'vue'
 
 //基础属性
 const message = ref("组合式API绑定数据简约")
@@ -54,6 +55,15 @@ function addCount() {
 watch(count, (newValue, oldValue) => {
   console.log(newValue, oldValue)
 })
+
+//生命周期函数，每个生命周期的方法可以独立处理对应的业务
+onMounted(() => {
+  console.log("组件渲染之后")
+})
+
+onMounted(() => {
+   console.log("组件渲染之后2")
+});
 
 </script>
 
