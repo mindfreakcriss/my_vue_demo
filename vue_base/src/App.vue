@@ -28,7 +28,15 @@ import MyConponent from "@/components/MyConponent.vue";
 // import Header from "@/pages/Header.vue";
 // import Main from "@/pages/Main.vue";
 // import Aside from "@/pages/Aside.vue";
-import ComponentActiveB from "@/components/ComponentActiveB.vue";
+//import ComponentActiveB from "@/components/ComponentActiveB.vue";
+
+//异步加载组件
+import {defineAsyncComponent} from "vue";
+
+const ComponentActiveB = defineAsyncComponent(
+    () => import("@/components/ComponentActiveB.vue"),
+)
+
 import ComponentActiveA from "@/components/ComponentActiveA.vue";
 import Parent from "@/components/Parent.vue";
 import ComponentA from "@/components/ComponentA.vue";
