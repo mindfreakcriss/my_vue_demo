@@ -33,6 +33,7 @@ import ComponentA from "@/components/ComponentA.vue";
 import ComponentEvent from "@/components/ComponentEvent.vue";
 import componentEvent from "@/components/ComponentEvent.vue";
 import ShowSearch from "@/components/ShowSearch.vue";
+import ComponentC from "@/components/ComponentC.vue";
 
 export default {
   components: {
@@ -41,7 +42,8 @@ export default {
     // Aside,
     //ComponentA
     componentEvent,
-    ShowSearch
+    ShowSearch,
+    ComponentC
   }
 }
 
@@ -70,5 +72,6 @@ export default {
 <!--  <parent></parent>-->
 <!--  <ComponentA></ComponentA>-->
 <!--  <component-event></component-event>-->
-  <ShowSearch></ShowSearch>
+<!--  <ShowSearch></ShowSearch>-->
+  <ComponentC></ComponentC>
 </template>
