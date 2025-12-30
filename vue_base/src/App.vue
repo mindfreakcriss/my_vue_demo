@@ -36,6 +36,7 @@ import ShowSearch from "@/components/ShowSearch.vue";
 import ComponentC from "@/components/ComponentC.vue";
 import SlotBase from "@/components/SlotBase.vue";
 import SlotsTwo from "@/components/SlotsTwo.vue";
+import SlotThree from "@/components/SlotThree.vue";
 export default {
   components: {
     // Main,
@@ -46,12 +47,14 @@ export default {
     // ShowSearch,
     // ComponentC
    // SlotBase
-    SlotsTwo
+ //   SlotsTwo
+    SlotThree
   },
   data(){
     return {
       //插槽内容可以访问到父组件作用域，因为插槽内容本身就是父组件模版中定义的
-      message:"slot parent sth"
+      message:"slot parent sth",
+      currentTest : "test sth"
     }
   }
 }
@@ -89,16 +92,25 @@ export default {
 <!--      <p>slot content</p>-->
 <!--    </div>-->
 <!--  </SlotBase>-->
-  <SlotsTwo>
-<!--    <h3>{{message}}</h3>--> <!--默认内容是指，slot中间没有东西-->
-    <template v-slot:header>
-        <h3>标题</h3>
+<!--  <SlotsTwo>-->
+<!--&lt;!&ndash;    <h3>{{message}}</h3>&ndash;&gt; &lt;!&ndash;默认内容是指，slot中间没有东西&ndash;&gt;-->
+<!--    <template v-slot:header>-->
+<!--        <h3>标题</h3>-->
+<!--    </template>-->
+<!--    <template v-slot:main>-->
+<!--        <p>内容</p>-->
+<!--    </template>-->
+<!--    <template #body>-->
+<!--      <p>插槽简写</p>-->
+<!--    </template>-->
+<!--  </SlotsTwo>-->
+<!--  <slot-three v-slot="slotProps">-->
+<!--    <h3> {{ currentTest  }}  - {{ slotProps.msg}} </h3>-->
+<!--  </slot-three>-->
+  <!--具名插槽传值-->
+  <slot-three>
+    <template #data="slotProps">
+      <h3> {{ currentTest  }}  - {{ slotProps.msg}} </h3>
     </template>
-    <template v-slot:main>
-        <p>内容</p>
-    </template>
-    <template #body>
-      <p>插槽简写</p>
-    </template>
-  </SlotsTwo>
+  </slot-three>
 </template>
