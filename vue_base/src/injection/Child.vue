@@ -1,13 +1,21 @@
 <script>
+//provide 和 inject 只能从上往下传
     export default {
       name: 'Child',
-      props: ['title'],
+      inject:["message",'globalData'],
+      data() {
+        return {
+          fullMessage: this.message + " and child ",
+        }
+      }
     }
 </script>
 
 <template>
   <h3>Child</h3>
-  {{ title }}
+  {{ fullMessage }}
+  <p> {{globalData}} </p>
+
 </template>
 
 <style scoped>

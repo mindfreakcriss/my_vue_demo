@@ -7,7 +7,16 @@
       },
       data() {
         return {
-          title: "Grand money",
+            message: "grand money for injection for data",
+        }
+      },
+      // provide:{
+      //   message:"grand money for injection"
+      // }
+      //数据来源于data的写法
+      provide() {
+        return {
+          message:this.message
         }
       }
     }
@@ -15,7 +24,7 @@
 
 <template>
     <h3>Grand</h3>
-    <parent :title="title"/>
+    <parent />
 </template>
 
 <style scoped>

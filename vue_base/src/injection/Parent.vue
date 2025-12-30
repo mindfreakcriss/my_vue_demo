@@ -5,13 +5,12 @@
     components: {
       Child,
     },
-    props:["title"]
   }
 </script>
 
 <template>
     <h3>Parent</h3>
-    <Child :title="title"/>
+    <Child />
 </template>
 
 <style scoped>
