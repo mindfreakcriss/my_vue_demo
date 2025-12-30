@@ -38,6 +38,7 @@ const ComponentActiveB = defineAsyncComponent(
 )
 
 import ComponentActiveA from "@/components/ComponentActiveA.vue";
+import Grand from "@/injection/Grand.vue";
 import Parent from "@/components/Parent.vue";
 import ComponentA from "@/components/ComponentA.vue";
 import ComponentEvent from "@/components/ComponentEvent.vue";
@@ -59,8 +60,9 @@ export default {
    // SlotBase
  //   SlotsTwo
    // SlotThree
-    ComponentActiveB,
-    ComponentActiveA
+  //  ComponentActiveB,
+  //  ComponentActiveA
+    Grand
   },
   data(){
     return {
@@ -132,10 +134,11 @@ export default {
 <!--    </template>-->
 <!--  </slot-three>-->
 
-  <component :is="tabComponent"></component>
+<!--  <component :is="tabComponent"></component>-->
 
-  <button @click="changeHandle">切换组件</button>
+<!--  <button @click="changeHandle">切换组件</button>-->
 
 
+  <Grand/>
 
 </template>
