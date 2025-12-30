@@ -43,6 +43,12 @@ const demo = computed(() => {
   return message.value + "hahah";
 })
 
+//事件实现
+const count = ref(0)
+function addCount() {
+  count.value += 1
+}
+
 </script>
 
 <template>
@@ -51,6 +57,8 @@ const demo = computed(() => {
     <p>{{ userInfo.name}}</p>
     <p>{{ reverse }}</p>
     <p>{{ demo }}</p>
+    <p>{{ count }}</p>
+    <button @click="addCount">增加</button>
 </template>
 
 <style scoped>
