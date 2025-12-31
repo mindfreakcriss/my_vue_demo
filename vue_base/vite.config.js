@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+    //路径别名
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
