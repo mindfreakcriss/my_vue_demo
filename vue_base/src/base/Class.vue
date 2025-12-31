@@ -1,18 +1,14 @@
-<script>
-  export default {
-    data() {
-      return {
-        isActive: false,
-        hasError: true,
-        classObject: {
-          'active': false,
-          'text-danger': true,
-        },
-        arrActive:"active",
-        arrHasError:"text-danger",
-      }
-    }
-  }
+<script setup>
+import {reactive, ref} from "vue";
+
+const isActive = ref(false)
+const hasError = ref(true)
+const classObject = reactive({
+  'active': false,
+  'text-danger':true
+})
+const arrActive = ref('active')
+const arrHasError = ref('text-danger')
 </script>
 
 <template>

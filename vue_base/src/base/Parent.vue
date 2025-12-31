@@ -1,5 +1,5 @@
 <script setup>
-  import Child from '@/composive/Child.vue'
+  import Child from '@/base/Child.vue'
   import { ref } from 'vue'
   const age = ref(20)
 

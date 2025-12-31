@@ -1,18 +1,13 @@
-<script>
+<script setup>
  import Article from "@/pages/Article.vue";
-
- export default {
-   components: {
-     Article,
-   }
- }
 </script>
 
 <template>
   <div class="main">
-    <h3>Main</h3>
-    <Article></Article>
-    <Article></Article>
+      <h3>main</h3>
+    <Article/>
+    <Article/>
+    <Article/>
   </div>
 </template>
 

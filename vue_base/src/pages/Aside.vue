@@ -1,18 +1,12 @@
-<script>
-import Item from "@/pages/Item.vue";
-export default {
-    components: {
-      Item
-    }
-  }
+<script setup>
+    import Item from "@/pages/Item.vue";
 </script>
 
 <template>
   <div class="aside">
-    <h3>Aside</h3>
-    <item></item>
-    <item></item>
-    <item></item>
+      <h3>Aside</h3>
+    <item/>
+    <item/>
   </div>
 </template>
 
