@@ -3,6 +3,10 @@
 import ButtonDemo from "@/element-ui/ButtonDemo.vue";
 import ContainerDemo from "@/element-ui/ContainerDemo.vue";
 import LayoutDemo from "@/element-ui/LayoutDemo.vue";
+import FromDemo from "@/element-ui/FromDemo.vue";
+import PagationDemo from "@/element-ui/PagationDemo.vue";
+import TableDemo from "@/element-ui/TableDemo.vue";
+import BaseFlameDemo from "@/element-ui/BaseFlameDemo.vue";
 
 
 </script>
@@ -10,7 +14,11 @@ import LayoutDemo from "@/element-ui/LayoutDemo.vue";
 <template>
 <!--  <ButtonDemo/>-->
 <!--  <ContainerDemo/>-->
-  <LayoutDemo/>
+<!--  <LayoutDemo/>-->
+<!--  <FromDemo/>-->
+<!--  <PagationDemo/>-->
+<!--  <TableDemo/>-->
+  <BaseFlameDemo/>
 </template>
 
 <style scoped>
