@@ -17,7 +17,7 @@ const message = ref("生命周期函数内容")
 function updateData() {
   message.value = "更新生命周期函数内容"
 }
-const banner = reactive([])
+const banner = ref([])
 onBeforeMount(() => {
   console.log("组件挂载前打印")
 })
@@ -74,7 +74,7 @@ onUpdated(() => {
   <Class/>
   <h3>组件传值内容</h3>
   <Grand/>
-
+    <h3>布局</h3>
   <Header/>
   <Aside/>
   <Main/>

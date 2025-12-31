@@ -5,8 +5,8 @@
 <template>
   <div class="aside">
       <h3>Aside</h3>
-    <item/>
-    <item/>
+    <Item/>
+    <Item/>
   </div>
 </template>
 
