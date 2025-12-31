@@ -3,15 +3,21 @@ import { createApp } from 'vue'
 //引入element
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+//导入路由器
+import router from '@/router'
 
 //根组件
 //import App from './App.vue'
-import App from './App-Element.vue'
+//element-demo
+//import App from './App-Element.vue'
+//vue-router-demo
+import App from './App-router.vue'
 
 const app = createApp(App);
 
 app.use(ElementPlus)
-
+//使用路由
+app.use(router)
 //全局注入
 app.provide("globalData",'i am global data');
 
