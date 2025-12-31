@@ -18,11 +18,11 @@ const routes = [
         component: () => import('@/views/user.vue'),
     },
     {
-        'path': '/vip',
+        'path': '/vip', //需要一个空白的页面进行渲染，router-view
         component: () => import('@/views/vip.vue'),
         children: [
             {
-                path: '',
+                path: '', //默认页面
                 component: () => import("@/views/vip/default.vue") //子页面路由
             },
             {
@@ -34,6 +34,12 @@ const routes = [
                 component: () => import("@/views/vip/info.vue")
             },
         ]
+    },
+    //重定向
+    {
+        path: '/svip',
+        redirect: '/vip',
+        //redirect: {name:'member',params:{id:123,name:'title'}}, //也支持函数式传惨
     }
 ]
 
