@@ -16,6 +16,24 @@ const routes = [
         path: '/user/:id',  //user/123 ,需要注意路径需要一致
         name: 'member',//路由名字,用于动态参数传递
         component: () => import('@/views/user.vue'),
+    },
+    {
+        'path': '/vip',
+        component: () => import('@/views/vip.vue'),
+        children: [
+            {
+                path: '',
+                component: () => import("@/views/vip/default.vue") //子页面路由
+            },
+            {
+                path: 'order',
+                component: () => import("@/views/vip/order.vue") //子页面路由
+            },
+            {
+                path: 'info',
+                component: () => import("@/views/vip/info.vue")
+            },
+        ]
     }
 ]
 
