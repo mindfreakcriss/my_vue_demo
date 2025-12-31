@@ -18,6 +18,20 @@ const app = createApp(App);
 app.use(ElementPlus)
 //使用路由
 app.use(router)
+
+//全局前置守卫
+router.beforeEach((to, from, next) => {
+    console.log("to",to)
+    console.log("from", from)
+
+    //拦截，不能去 member
+    if (to.name === "member") {
+        next(false)
+    } else {
+        next()
+    }
+})
+
 //全局注入
 app.provide("globalData",'i am global data');
 
