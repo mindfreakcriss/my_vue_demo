@@ -37,7 +37,17 @@ npm run dev
 npm run build
 ```
 
-### Element-Plus webiste
+### vue website
+```
+https://cn.vuejs.org/
+```
+
+### Element-Plus website
 ```
 https://element-plus.org/zh-CN/
+```
+
+### Vue-router website
+```
+https://router.vuejs.org/zh/
 ```
