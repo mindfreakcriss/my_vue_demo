@@ -1,14 +1,16 @@
 //全局注册
 import { createApp } from 'vue'
+//引入element
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
 //根组件
-import App from './App.vue'
-import Header from '@/pages/Header.vue'
+//import App from './App.vue'
+import App from './App-Element.vue'
 
 const app = createApp(App);
 
-//在这里注册组件,推荐局部组册
-app.component('Header', Header);
+app.use(ElementPlus)
 
 //全局注入
 app.provide("globalData",'i am global data');
